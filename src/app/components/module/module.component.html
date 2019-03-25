@@ -1,0 +1,13 @@
+<div id="module-info">
+  <h1><a href="/groups/${builder.toOutputFriendlyName($module_group)}.html">$module_group</a> &gt; $module_id</h1>
+  <div class="aliases">
+    <p>Aliases: </p>
+    <ul class="highlight">
+      #foreach($alias in $module_anno.aliases())
+      <li>$alias</li>
+      #end
+    </ul>
+  </div>
+  <p>$module_anno.help()</p>
+  #parse("commands_template.vm")
+</div>

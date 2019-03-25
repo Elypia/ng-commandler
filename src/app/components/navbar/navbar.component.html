@@ -1,0 +1,13 @@
+<nav class="navbar-component body-padding">
+  <a href=""><h1>All Commands</h1></a>
+  <ul *ngFor="let group of groups">
+    <li class="hover group-li">
+      <a [routerLink]="[group.name]"><h2>{{group.name}}</h2></a>
+      <ul class="module-ul" *ngFor="let module of group.modules">
+        <li class="hover">
+          <a [routerLink]="[group.name, module.name]">{{module.name}}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

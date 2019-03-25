@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "socialLinks": [
+      {
+        "url": "https://discord.gg/hprGMaM",
+        "icon": "fab fa-discord"
+      },
+      {
+        "url": "https://gitlab.com/Elypia",
+        "icon": "fab fa-gitlab"
+      },
+      {
+        "url": "https://twitter.com/Elypia",
+        "icon": "fab fa-twitter"
+      }
+    ]
+  },
+  "modules": [{
+    "name": "Miscellaneous",
+    "group": "Miscellaneous",
+    "aliases": ["misc"],
+    "help": "Miscellaneous module with random commands.",
+    "commands": [{
+      "name": "Letter Counter",
+      "aliases": ["letters"],
+      "help": "Count the number of letters.",
+      "parameters": [{
+        "name": "body",
+        "help": "The body of text to count from."
+      }]
+    }]
+  }, {
+    "name": "osu!",
+    "group": "Gaming",
+    "aliases": ["osu"],
+    "help": "osu! is a super cool rhythm game everyone plays!",
+    "commands": [{
+      "name": "Player Stats",
+      "aliases": ["get"],
+      "help": "Get stats of osu! players.",
+      "parameters": [{
+        "name": "players",
+        "help": "The players usernames you want to retrieve."
+      }]
+    }]
+  }, {
+    "name": "RuneScape",
+    "group": "Gaming",
+    "aliases": ["runescape", "rs"],
+    "help": "RuneScape, the popular MMORPG!",
+    "commands": [{
+      "name": "Completed Quests",
+      "aliases": ["quests"],
+      "help": "View all quests a player has completed.",
+      "parameters": [{
+        "name": "username",
+        "help": "The players in-game name."
+      }]
+    }, {
+      "name": "Player Stats",
+      "aliases": ["stats"],
+      "help": "View a players stats.",
+      "parameters": [{
+        "name": "username",
+        "help": "The players in-game name."
+      }]
+    }, {
+      "name": "Status",
+      "aliases": ["status"],
+      "help": "See an overall status of RuneScape.",
+      "parameters": []
+    }]
+  }, {
+    "name": "YouTube",
+    "group": "Media",
+    "aliases": ["youtube", "yt"],
+    "help": "Search for videos on YouTube.",
+    "commands": [{
+      "name": "Search",
+      "aliases": ["search"],
+      "help": "Search for a video, playlist or channel on YouTube.",
+      "parameters": [{
+        "name": "query",
+        "help": "The search query to look up."
+      }]
+    }]
+  }]
+}
