@@ -1,0 +1,25 @@
+{
+  "name": "@elypia/ng-commandler",
+  "version": "0.0.1",
+  "description": "This is a component library for building webpages that display data for Commandler applications for Angular.",
+  "license": "Apache 2.0",
+  "author": "Elypia",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/Elypia/ng-commandler.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/Elypia/ng-commandler/issues"
+  },
+  "homepage": "https://elypia.com/",
+  "keywords": [
+    "commandler",
+    "angular",
+    "javascript",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^8.0.3",
+    "@angular/core": "^8.0.3"
+  }
+}

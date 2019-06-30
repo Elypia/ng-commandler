@@ -1,0 +1,159 @@
+{
+  "modules": [
+    {
+      "group": "Miscellaneous",
+      "name": "Miscellaneous",
+      "help": "Miscellaneous module with random commands.",
+      "aliases": [
+        "misc"
+      ],
+      "commands": [
+        {
+          "name": "Letter Counter",
+          "help": "Count the number of letters.",
+          "minParams": 1,
+          "maxParams": 1,
+          "default": false,
+          "static": false,
+          "aliases": [
+            "letters"
+          ],
+          "params": [
+            {
+              "name": "body",
+              "help": "The body of text to count from.",
+              "list": false,
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Gaming",
+      "name": "osu!",
+      "help": "osu! is a super cool rhythm game everyone plays!",
+      "aliases": [
+        "osu"
+      ],
+      "commands": [
+        {
+          "name": "Player Stats",
+          "help": "Get stats on osu! players.",
+          "minParams": 1,
+          "maxParams": 2,
+          "default": false,
+          "static": false,
+          "aliases": [
+            "get"
+          ],
+          "params": [
+            {
+              "name": "players",
+              "help": "The players usernames you want to retrieve.",
+              "list": false,
+              "required": true
+            },
+            {
+              "name": "mode",
+              "help": "The mode to use when getting players.",
+              "list": false,
+              "required": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Gaming",
+      "name": "RuneScape",
+      "help": "RuneScape, the popular MMORPG!",
+      "aliases": [
+        "rs",
+        "runescape"
+      ],
+      "commands": [
+        {
+          "name": "Status",
+          "help": "See an overall status of RuneScape.",
+          "minParams": 0,
+          "maxParams": 0,
+          "default": false,
+          "static": false,
+          "aliases": [
+            "status"
+          ],
+          "params": []
+        },
+        {
+          "name": "Player Stats",
+          "help": "View a players stats.",
+          "minParams": 1,
+          "maxParams": 1,
+          "default": false,
+          "static": false,
+          "aliases": [
+            "stats"
+          ],
+          "params": [
+            {
+              "name": "username",
+              "help": "The players in-game name.",
+              "list": false,
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "Completed Quests",
+          "help": "View all quests a player has completed.",
+          "minParams": 1,
+          "maxParams": 1,
+          "default": false,
+          "static": false,
+          "aliases": [
+            "quests"
+          ],
+          "params": [
+            {
+              "name": "username",
+              "help": "The players in-game name.",
+              "list": false,
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Media",
+      "name": "YouTube",
+      "help": "Search for videos on YouTube.",
+      "aliases": [
+        "yt",
+        "youtube"
+      ],
+      "commands": [
+        {
+          "name": "Search",
+          "help": "Search for a video, playlist or channel on YouTube.",
+          "minParams": 1,
+          "maxParams": 1,
+          "default": false,
+          "static": false,
+          "aliases": [
+            "search"
+          ],
+          "params": [
+            {
+              "name": "query",
+              "help": "The search query to look up.",
+              "list": false,
+              "required": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

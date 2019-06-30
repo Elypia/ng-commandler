@@ -4,6 +4,8 @@
 /dist
 /tmp
 /out-tsc
+# Only exists if Bazel was run
+/bazel-out
 
 # dependencies
 /node_modules
@@ -42,3 +44,11 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#################
+# ng-commandler #
+#################
+
+*.pem
+*.key
+.idea/
