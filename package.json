@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "example": "ng build example --prod"
+    "example": "ng build example --prod",
+    "check": "npm run-script test && npm run-script e2e && npm run-script build && npm run-script example"
   },
   "private": true,
   "dependencies": {
