@@ -9,4 +9,4 @@ import {ModuleComponent} from './module.component';
     ModuleComponent
   ]
 })
-export class ElyModuleModule { }
+export class CmdModuleModule { }

@@ -1,0 +1,11 @@
+#fill {
+  min-height: calc(100vh - 80px);
+}
+
+.flex {
+  display: flex;
+}
+
+#content {
+  padding: 1em;
+}

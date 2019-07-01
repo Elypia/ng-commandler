@@ -17,11 +17,11 @@ export * from './lib/command/command.component';
 export * from './lib/group/group.module';
 export * from './lib/group/group.component';
 
-export * from './lib/header/header.module';
-export * from './lib/header/header.component';
+export * from './lib/toolbar/toolbar.module';
+export * from './lib/toolbar/toolbar.component';
 
 export * from './lib/module/module.module';
 export * from './lib/module/module.component';
 
-export * from './lib/navbar/navbar.module';
-export * from './lib/navbar/navbar.component';
+export * from './lib/navigation/navigation.module';
+export * from './lib/navigation/navigation.component';

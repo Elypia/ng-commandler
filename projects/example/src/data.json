@@ -1,4 +1,30 @@
 {
+  "metadata": {
+    "name": "Example App",
+    "logo": null,
+    "socialLinks": [
+      {
+        "url": "https://discord.gg/hprGMaM",
+        "icon": "fab fa-discord"
+      },
+      {
+        "url": "https://reddit.com/r/elypia/",
+        "icon": "fab fa-reddit-alien"
+      },
+      {
+        "url": "https://twitch.tv/elypiatv",
+        "icon": "fab fa-twitch"
+      },
+      {
+        "url": "https://twitter.com/Elypia",
+        "icon": "fab fa-twitter"
+      },
+      {
+        "url": "https://gitlab.com/Elypia",
+        "icon": "fab fa-gitlab"
+      }
+    ]
+  },
   "modules": [
     {
       "group": "Miscellaneous",
@@ -157,3 +183,4 @@
     }
   ]
 }
+

@@ -1,22 +1,16 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {DocService} from '../../services/doc/doc.service';
-import {Subscription} from 'rxjs';
-import {DocData} from '../../../../../commandler/src/lib/doc-data';
 import {Group} from '../../../../../commandler/src/lib/group';
 
 @Component({
-  selector: 'ely-group-view',
+  selector: 'app-group-view',
   templateUrl: './group-view.component.html',
   styleUrls: ['./group-view.component.css']
 })
-export class GroupViewComponent implements OnInit, OnDestroy {
-
-  @Input() private data: DocData;
+export class GroupViewComponent implements OnInit {
 
   public group: Group;
-
-  private subscription: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,9 +18,8 @@ export class GroupViewComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.subscription = this.route.paramMap.subscribe((params) => {
-      this.service.getData().subscribe((response) => {
-        const groups: Group[] = this.service.getGroups(response.modules);
+    this.route.paramMap.subscribe((params) => {
+      this.service.getGroups().subscribe((groups) => {
         const query = params.get('group');
 
         for (const group of groups) {
@@ -36,9 +29,5 @@ export class GroupViewComponent implements OnInit, OnDestroy {
         }
       });
     });
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 }

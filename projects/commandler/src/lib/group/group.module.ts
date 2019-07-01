@@ -9,4 +9,4 @@ import {GroupComponent} from './group.component';
     GroupComponent
   ]
 })
-export class ElyGroupModule { }
+export class CmdGroupModule { }

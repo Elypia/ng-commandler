@@ -1,0 +1,12 @@
+<nav>
+  <mat-list *ngFor="let group of groups">
+    <a [routerLink]="['/', group.name]" [ngClass]="{'selected': group.name === selectedGroup}">
+      <h2>{{group.name}}</h2>
+    </a>
+    <button mat-button *ngFor="let module of group.modules"
+            [routerLink]="['/', group.name, module.name]"
+            [ngClass]="{'selected': module.name === seletcedModule}">
+      {{module.name}}
+    </button>
+  </mat-list>
+</nav>

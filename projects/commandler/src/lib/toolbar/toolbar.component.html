@@ -1,0 +1,17 @@
+<mat-toolbar class="mat-elevation-z8" color="primary">
+  <div id="toolbar-left">
+      <img *ngIf="metadata?.logo" id="logo" [src]="metadata.logo" alt="Logo representing the application."/>
+      <a routerLink=""><h1 *ngIf="metadata?.name" class="hover">{{metadata.name}}</h1></a>
+    <ng-container *ngIf="metadata?.socialLinks">
+      <ul *ngFor="let socialLink of metadata.socialLinks">
+        <li class="hover">
+          <a href="{{socialLink.url}}" target="_blank"><i class="icon {{socialLink.icon}}"></i></a>
+        </li>
+      </ul>
+    </ng-container>
+  </div>
+  <form id="toolbar-right" action="">
+    <label for="search"></label>
+    <input id="search" type="text" placeholder="Search" name="search">
+  </form>
+</mat-toolbar>

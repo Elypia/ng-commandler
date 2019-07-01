@@ -1,0 +1,41 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+/** Alligned Left */
+
+#toolbar-left, #toolbar-left a {
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  margin-right: 1em;
+  height: 64px;
+}
+
+h1 {
+  margin-right: 1em;
+}
+
+.icon {
+  font-size: 32px;
+  padding-right: 0.5em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/** Aligned Right */
+
+form input {
+  padding: 1em;
+  border-radius: 0.5em;
+  outline: transparent;
+  border: none;
+}

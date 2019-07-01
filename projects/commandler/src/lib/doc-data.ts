@@ -1,7 +1,7 @@
-import {Module} from './module';
 import {Metadata} from './metadata';
+import {Module} from './module';
 
-export class DocData {
-  public modules: Module[];
-  public metadata: Metadata;
+export interface DocData {
+  metadata: Metadata;
+  modules: Module[];
 }

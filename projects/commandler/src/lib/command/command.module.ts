@@ -13,4 +13,4 @@ import {CommonModule} from '@angular/common';
     CommandComponent
   ]
 })
-export class ElyCommandComponent { }
+export class CmdCommandComponent { }

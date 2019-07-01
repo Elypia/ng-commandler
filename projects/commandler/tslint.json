@@ -4,13 +4,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "ely",
+      "cmd",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "ely",
+      "cmd",
       "kebab-case"
     ]
   }

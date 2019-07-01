@@ -1,0 +1,9 @@
+@import '~@angular/material/theming';
+
+@mixin ng-commandler-navigation-theme($theme) {
+  $background: map-get($theme, background);
+
+  nav {
+    background-color: mat-color($background);
+  }
+}

@@ -1,0 +1,37 @@
+@import '~@angular/material/theming';
+@import '../../commandler/src/lib/navigation/navigation.theme';
+
+$primary: mat-palette($mat-blue, 600, 200, 800);
+$accent: mat-palette($mat-blue-gray);
+$theme: mat-dark-theme($primary, $accent);
+
+@include mat-core();
+@include angular-material-theme($theme);
+@include ng-commandler-navigation-theme($theme);
+
+/* Reset */
+app-root,
+html, body, div, header, footer,
+h1, h2, h3, h4, h5, h6,
+li, ul,
+p, a {
+  margin: 0;
+  padding: 0;
+
+  color: rgb(255, 255, 255);
+  font-family: Roboto, sans-serif;
+}
+
+html, body, app-root {
+  min-height: 100vh;
+  min-width: 480px;
+  background-color: #222222;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hover:not(:hover) {
+  opacity: 0.9;
+}

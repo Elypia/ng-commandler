@@ -8,6 +8,5 @@ li {
   margin: 0 4px;
   padding: 3px;
   border-radius: 8px;
-  background-color: var(--pri-color);
   color: pink;
 }

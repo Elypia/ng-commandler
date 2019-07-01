@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {DocData} from '../../../commandler/src/lib/doc-data';
-import {LoadState} from '@elypia/elypian-angular';
+import {LoadState} from '@elypia/ng-elypian';
 import {DocService} from './services/doc/doc.service';
 
 @Component({
@@ -11,18 +11,31 @@ import {DocService} from './services/doc/doc.service';
 export class AppComponent implements OnInit {
 
   public data: DocData;
-  public loadState: LoadState = LoadState.Loading;
+  public dataState: LoadState = LoadState.Loading;
 
-  constructor(private service: DocService) {
-
-  }
+  constructor(
+    private cd: ChangeDetectorRef,
+    private service: DocService
+  ) { }
 
   ngOnInit(): void {
+    console.log('Making HTTP request to get metadata.');
+
     this.service.getData().subscribe(
       (response) => {
+        console.log('HTTP request complete.');
         this.data = response;
-        this.loadState = LoadState.Loaded;
-      }, () => this.loadState = LoadState.Failed
+        this.dataState = LoadState.Loaded;
+        console.log('LoadState has been set to: ', this.dataState);
+        this.cd.detectChanges();
+        this.cd.markForCheck();
+      }, (error) => {
+        console.error(error);
+        this.dataState = LoadState.Failed;
+        console.log('LoadState has been set to: ', this.dataState);
+      }
     );
+
+    console.log('Finished AppComponent#ngOnInit with a LoadState of: ', this.dataState);
   }
 }

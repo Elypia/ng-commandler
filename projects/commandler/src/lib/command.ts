@@ -7,7 +7,7 @@ export interface Command {
   help?: string;
   default: boolean;
   static: boolean;
-  parameters: Param[];
+  params: Param[];
   minParams: number;
   maxParams: number;
 }
