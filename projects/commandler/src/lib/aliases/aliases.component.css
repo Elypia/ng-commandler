@@ -1,12 +1,15 @@
-ul {
-  list-style-type: none;
+ul, li {
   display: inline;
 }
 
+ul {
+  list-style-type: none;
+}
+
 li {
-  display: inline;
-  margin: 0 4px;
+  margin: 2px 4px;
   padding: 3px;
   border-radius: 8px;
   color: pink;
+  background-color: #444444;
 }

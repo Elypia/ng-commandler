@@ -1,0 +1,14 @@
+.module {
+  margin-top: 1em;
+  border: #444444 solid 2px;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.name {
+  margin-bottom: 0.5em;
+}
+
+.commands {
+  margin-top: 0.5em;
+}

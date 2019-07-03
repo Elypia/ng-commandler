@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Command} from '../command';
+import {Command} from '../classes/command';
 
 @Component({
   selector: 'cmd-command',
@@ -7,5 +7,5 @@ import {Command} from '../command';
   styleUrls: ['./command.component.css']
 })
 export class CommandComponent {
-  @Input() command: Command;
+  @Input() public command: Command;
 }

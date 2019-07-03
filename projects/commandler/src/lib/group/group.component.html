@@ -1,29 +1,14 @@
-<div id="group-info">
-  <h1>$group_name</h1>
-  <a href="/modules/${utils.toOutput($gi_group_module_anno.id())}.html">
-    <div class="info-item module-info">
-      <h2>$gi_group_module_anno.id()</h2>
-      <div class="aliases">
-        <p>Aliases: </p>
-        <ul class="highlight">
-          #foreach($alias in $gi_group_module_anno.aliases())
-          <li>$alias</li>
-          #end
-        </ul>
+<div *ngIf="group">
+  <h1>{{group}}</h1>
+  <div class="module" *ngFor="let module of modules">
+    <a [routerLink]="['module', module.name]">
+      <h2 class="name">{{module.name}}</h2>
+      <cmd-aliases [aliases]="module.aliases"></cmd-aliases>
+      <p>{{module.help}}</p>
+      <p class="commands">Commands: </p>
+      <div class="command" *ngFor="let command of module.commands">
+          <p>{{command.name}}: {{command.help}}</p>
       </div>
-      <p>$gi_group_module_anno.help()</p>
-      <br>
-      <p>Commands:</p>
-      <table>
-        #foreach($gi_command in $gi_group_module.getPublicCommands())
-        #set($gi_command_anno = $gi_command.getAnnotation())
-        <tr>
-          <td class="command-id highlight">$gi_command_anno.id()</td>
-          <td>$gi_command_anno.help()</td>
-        </tr>
-        #end
-      </table>
-    </div>
-  </a>
-  #end
+    </a>
+  </div>
 </div>

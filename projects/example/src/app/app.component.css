@@ -9,3 +9,7 @@
 #content {
   padding: 1em;
 }
+
+#root-loading {
+  height: 100%;
+}

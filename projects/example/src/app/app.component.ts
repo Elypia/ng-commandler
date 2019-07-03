@@ -1,7 +1,8 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {DocData} from '../../../commandler/src/lib/doc-data';
 import {LoadState} from '@elypia/ng-elypian';
-import {DocService} from './services/doc/doc.service';
+import {CommandlerService} from './services/commandler/commandler.service';
+import {ActivatedRoute} from '@angular/router';
+import {CommandlerData} from '../../../commandler/src/lib/classes/commandler-data';
 
 @Component({
   selector: 'app-root',
@@ -10,32 +11,34 @@ import {DocService} from './services/doc/doc.service';
 })
 export class AppComponent implements OnInit {
 
-  public data: DocData;
-  public dataState: LoadState = LoadState.Loading;
+  public data: CommandlerData;
+
+  public state: LoadState = LoadState.Loading;
 
   constructor(
+    private route: ActivatedRoute,
     private cd: ChangeDetectorRef,
-    private service: DocService
+    private commandlerService: CommandlerService
   ) { }
 
-  ngOnInit(): void {
-    console.log('Making HTTP request to get metadata.');
+  public ngOnInit(): void {
+    console.log('Initializing application.');
 
-    this.service.getData().subscribe(
-      (response) => {
+    this.commandlerService.getCommandlerData().subscribe(
+      (data) => {
         console.log('HTTP request complete.');
-        this.data = response;
-        this.dataState = LoadState.Loaded;
-        console.log('LoadState has been set to: ', this.dataState);
+        this.data = data;
+
+        this.state = LoadState.Loaded;
+        console.log('LoadState has been set to: ', this.state);
+
         this.cd.detectChanges();
         this.cd.markForCheck();
       }, (error) => {
         console.error(error);
-        this.dataState = LoadState.Failed;
-        console.log('LoadState has been set to: ', this.dataState);
+        this.state = LoadState.Failed;
+        console.log('LoadState has been set to: ', this.state);
       }
     );
-
-    console.log('Finished AppComponent#ngOnInit with a LoadState of: ', this.dataState);
   }
 }

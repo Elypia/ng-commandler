@@ -1,6 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {AliasesComponent} from './aliases.component';
+import {CmdAliasesModule} from './aliases.module';
 
 describe('AliasesComponent', () => {
   let component: AliasesComponent;
@@ -8,7 +9,9 @@ describe('AliasesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AliasesComponent ]
+      imports: [
+        CmdAliasesModule
+      ]
     })
     .compileComponents();
   }));

@@ -1,4 +1,6 @@
 <span>Aliases: </span>
-<ul *ngFor="let alias of aliases">
-  <li>{{alias}}</li>
-</ul>
+<ng-container *ngIf="aliases">
+  <ul *ngFor="let alias of aliases">
+    <li>{{alias}}</li>
+  </ul>
+</ng-container>

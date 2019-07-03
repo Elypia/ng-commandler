@@ -4,17 +4,19 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {ElyLoadableModule} from '@elypia/ng-elypian';
 import {RouterModule, Routes} from '@angular/router';
-import {HomeComponent} from './pages/home/home.component';
-import {GroupViewComponent} from './pages/group-view/group-view.component';
+import {HomeComponent} from './home/home.component';
+import {GroupPageComponent} from './group-page/group-page.component';
 import {HttpClientModule} from '@angular/common/http';
 import {CmdToolbarModule} from '../../../commandler/src/lib/toolbar/toolbar.module';
 import {CmdNavigationModule} from '../../../commandler/src/lib/navigation/navigation.module';
 import {CmdAliasesModule} from '../../../commandler/src/lib/aliases/aliases.module';
-import {ModulePageComponent} from './pages/module-page/module-page.component';
+import {ModulePageComponent} from './module-page/module-page.component';
+import {CmdModuleModule} from '../../../commandler/src/lib/module/module.module';
+import {CmdGroupModule} from '../../../commandler/src/lib/group/group.module';
 
 const routes: Routes = [
-  { path: ':group/:module', component: GroupViewComponent },
-  { path: ':group', component: GroupViewComponent },
+  { path: ':group/:module', component: ModulePageComponent },
+  { path: ':group', component: GroupPageComponent },
   { path: '', component: HomeComponent },
   { path: '**', redirectTo: '/' },
 ];
@@ -22,7 +24,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    GroupViewComponent,
+    GroupPageComponent,
     HomeComponent,
     ModulePageComponent
   ],
@@ -34,9 +36,13 @@ const routes: Routes = [
     RouterModule,
     CmdToolbarModule,
     CmdNavigationModule,
-    CmdAliasesModule
+    CmdAliasesModule,
+    CmdModuleModule,
+    CmdGroupModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

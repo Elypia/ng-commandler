@@ -1,12 +1,14 @@
 /* Public API Surface of Commandler */
 
-export * from './lib/command';
-export * from './lib/doc-data';
-export * from './lib/group';
-export * from './lib/metadata';
-export * from './lib/module';
-export * from './lib/param';
-export * from './lib/social-link';
+export * from './lib/classes/utils/array-utils';
+export * from './lib/classes/utils/commandler-utils';
+
+export * from './lib/classes/command';
+export * from './lib/classes/commandler-data';
+export * from './lib/classes/metadata';
+export * from './lib/classes/module';
+export * from './lib/classes/param';
+export * from './lib/classes/social-link';
 
 export * from './lib/aliases/aliases.module';
 export * from './lib/aliases/aliases.component';
@@ -25,3 +27,4 @@ export * from './lib/module/module.component';
 
 export * from './lib/navigation/navigation.module';
 export * from './lib/navigation/navigation.component';
+export * from './lib/navigation/navigation.service';

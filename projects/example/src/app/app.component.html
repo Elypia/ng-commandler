@@ -1,7 +1,7 @@
-<ely-loadable [state]="dataState">
-  <cmd-toolbar></cmd-toolbar>
+<ely-loadable [state]="state">
+  <cmd-toolbar *ngIf="data?.metadata" [metadata]="data.metadata"></cmd-toolbar>
   <div id="fill" class="flex">
-    <cmd-navigation></cmd-navigation>
+    <cmd-navigation [data]="data"></cmd-navigation>
     <div id="content">
       <router-outlet></router-outlet>
     </div>

@@ -1,39 +1,33 @@
-import {Component, OnInit} from '@angular/core';
-import {Group} from '../group';
-import {DocService} from '../../../../example/src/app/services/doc/doc.service';
-import {ActivatedRoute} from '@angular/router';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Module} from '../classes/module';
+import {CommandlerData} from '../classes/commandler-data';
+import {getGroups} from '../classes/utils/commandler-utils';
+import {NavigationService} from './navigation.service';
 
 @Component({
   selector: 'cmd-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnChanges {
 
-  public groups: Group[];
+  /** A copy of the global commandler data of this instance. */
+  @Input() public data: CommandlerData;
 
-  /** The current group that is selected. */
-  private selectedGroup: string;
+  /** The modules grouped by by group name. */
+  public groups: Map<string, Module[]>;
 
-  /** The current module that is selected. */
-  private seletcedModule: string;
+  constructor(public navigationService: NavigationService) {
 
-  constructor(
-    private route: ActivatedRoute,
-    public service: DocService
-  ) { }
+  }
 
-  public ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      this.selectedGroup = params.get('group');
-      this.seletcedModule = params.get('module');
+  public ngOnChanges(changes: SimpleChanges): void {
+    console.log('Navigation component selected on: ', this.navigationService.selectedGroup, '>', this.navigationService.selectedModule);
+    console.log('Navigation using modules: ', this.data);
 
-      console.log('Navigation bar set to Group:Module: ', this.selectedGroup, ':', this.seletcedModule);
-    });
-
-    this.service.getGroups().subscribe((groups) => {
-      this.groups = groups;
-      console.log('Navigation inititalized with:', this.groups);
-    });
+    if (this.data)
+      this.groups = getGroups(this.data.modules);
+    else
+      console.warn('Navigation initialization had null CommandlerData.');
   }
 }

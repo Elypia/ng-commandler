@@ -6,5 +6,5 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./aliases.component.css']
 })
 export class AliasesComponent {
-  @Input() aliases: string[];
+  @Input() public aliases: string[];
 }
