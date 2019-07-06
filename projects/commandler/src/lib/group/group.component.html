@@ -1,7 +1,7 @@
 <div *ngIf="group">
   <h1>{{group}}</h1>
   <div class="module" *ngFor="let module of modules">
-    <a [routerLink]="['module', module.name]">
+    <a [routerLink]="['/', group, module.name]">
       <h2 class="name">{{module.name}}</h2>
       <cmd-aliases [aliases]="module.aliases"></cmd-aliases>
       <p>{{module.help}}</p>

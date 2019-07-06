@@ -64,7 +64,7 @@
               "projects/example/src/safari-pinned-tab.svg",
               "projects/example/src/site.webmanifest",
               "projects/example/src/assets",
-              "projects/example/src/data.json"
+              "projects/example/src/commandler.json"
             ],
             "styles": [
               "projects/example/src/styles.scss"
@@ -138,7 +138,7 @@
               "projects/example/src/safari-pinned-tab.svg",
               "projects/example/src/site.webmanifest",
               "projects/example/src/assets",
-              "projects/example/src/data.json"
+              "projects/example/src/commandler.json"
             ]
           }
         },

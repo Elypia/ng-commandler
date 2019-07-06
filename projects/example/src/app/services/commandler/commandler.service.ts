@@ -22,7 +22,7 @@ export class CommandlerService {
       return of(this.commandlerData);
     }
 
-    return this.client.get<CommandlerData>('/data.json').pipe(
+    return this.client.get<CommandlerData>('/commandler.json').pipe(
       map((response) => {
         console.log('Returning data from GET request: ', response);
         response.modules.sort((a, b) => a.name.localeCompare(b.name));
