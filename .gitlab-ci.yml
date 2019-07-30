@@ -1,23 +1,31 @@
-image: trion/ng-cli-e2e:8.0.6
+image: trion/ng-cli-e2e:8.1.2
 
 cache:
   paths:
     - node_modules/
 
-build:
-  stage: build
-  script:
-    - npm install
-    - npm rebuild node-sass
-    - npm run-script build
-    - npm run-script example
+stages:
+  - test
+  - build
+  - deploy
+
+before_script:
+  - npm install
+  - npm rebuild node-sass
 
 test:
   stage: test
   script:
+    - npm run-script lint
     - npm run-script test
     - npm run-script e2e
   cache:
     policy: pull
     paths:
       - node_modules/
+
+build:
+  stage: build
+  script:
+    - npm run-script build
+    - npm run-script build example --prod
