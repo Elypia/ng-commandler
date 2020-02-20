@@ -38,9 +38,9 @@
         }
       }
     },
-    "example": {
-      "root": "projects/example/",
-      "sourceRoot": "projects/example/src",
+    "default": {
+      "root": "projects/default/",
+      "sourceRoot": "projects/default/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
@@ -48,26 +48,26 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/example",
-            "index": "projects/example/src/index.html",
-            "main": "projects/example/src/main.ts",
-            "polyfills": "projects/example/src/polyfills.ts",
-            "tsConfig": "projects/example/tsconfig.app.json",
+            "outputPath": "dist/default",
+            "index": "projects/default/src/index.html",
+            "main": "projects/default/src/main.ts",
+            "polyfills": "projects/default/src/polyfills.ts",
+            "tsConfig": "projects/default/tsconfig.app.json",
             "assets": [
-              "projects/example/src/android-chrome-192x192.png",
-              "projects/example/src/android-chrome-256x256.png",
-              "projects/example/src/apple-touch-icon.png",
-              "projects/example/src/browserconfig.xml",
-              "projects/example/src/favicon-16x16.png",
-              "projects/example/src/favicon-32x32.png",
-              "projects/example/src/mstile-150x150.png",
-              "projects/example/src/safari-pinned-tab.svg",
-              "projects/example/src/site.webmanifest",
-              "projects/example/src/assets",
-              "projects/example/src/commandler.json"
+              "projects/default/src/android-chrome-192x192.png",
+              "projects/default/src/android-chrome-256x256.png",
+              "projects/default/src/apple-touch-icon.png",
+              "projects/default/src/browserconfig.xml",
+              "projects/default/src/favicon-16x16.png",
+              "projects/default/src/favicon-32x32.png",
+              "projects/default/src/mstile-150x150.png",
+              "projects/default/src/safari-pinned-tab.svg",
+              "projects/default/src/site.webmanifest",
+              "projects/default/src/assets",
+              "projects/default/src/commandlerdoc.json"
             ],
             "styles": [
-              "projects/example/src/styles.scss"
+              "projects/default/src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -76,8 +76,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/example/src/environments/environment.ts",
-                  "with": "projects/example/src/environments/environment.prod.ts"
+                  "replace": "projects/default/src/environments/environment.ts",
+                  "with": "projects/default/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -102,43 +102,43 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "example:build"
+            "browserTarget": "default:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "example:build:production"
+              "browserTarget": "default:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "example:build"
+            "browserTarget": "default:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/example/src/test.ts",
-            "polyfills": "projects/example/src/polyfills.ts",
-            "tsConfig": "projects/example/tsconfig.spec.json",
-            "karmaConfig": "projects/example/karma.conf.js",
+            "main": "projects/default/src/test.ts",
+            "polyfills": "projects/default/src/polyfills.ts",
+            "tsConfig": "projects/default/tsconfig.spec.json",
+            "karmaConfig": "projects/default/karma.conf.js",
             "styles": [
-              "projects/example/src/styles.scss"
+              "projects/default/src/styles.scss"
             ],
             "scripts": [],
             "assets": [
-              "projects/example/src/android-chrome-192x192.png",
-              "projects/example/src/android-chrome-256x256.png",
-              "projects/example/src/apple-touch-icon.png",
-              "projects/example/src/browserconfig.xml",
-              "projects/example/src/favicon-16x16.png",
-              "projects/example/src/favicon-32x32.png",
-              "projects/example/src/mstile-150x150.png",
-              "projects/example/src/safari-pinned-tab.svg",
-              "projects/example/src/site.webmanifest",
-              "projects/example/src/assets",
-              "projects/example/src/commandler.json"
+              "projects/default/src/android-chrome-192x192.png",
+              "projects/default/src/android-chrome-256x256.png",
+              "projects/default/src/apple-touch-icon.png",
+              "projects/default/src/browserconfig.xml",
+              "projects/default/src/favicon-16x16.png",
+              "projects/default/src/favicon-32x32.png",
+              "projects/default/src/mstile-150x150.png",
+              "projects/default/src/safari-pinned-tab.svg",
+              "projects/default/src/site.webmanifest",
+              "projects/default/src/assets",
+              "projects/default/src/commandlerdoc.json"
             ]
           }
         },
@@ -146,8 +146,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/example/tsconfig.app.json",
-              "projects/example/tsconfig.spec.json"
+              "projects/default/tsconfig.app.json",
+              "projects/default/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -156,20 +156,20 @@
         }
       }
     },
-    "example-e2e": {
-      "root": "projects/example-e2e/",
+    "default-e2e": {
+      "root": "projects/default-e2e/",
       "projectType": "application",
       "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/example-e2e/protractor.conf.js",
-            "devServerTarget": "example:serve"
+            "protractorConfig": "projects/default-e2e/protractor.conf.js",
+            "devServerTarget": "default:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "example:serve:production"
+              "devServerTarget": "default:serve:production"
             }
           }
         },

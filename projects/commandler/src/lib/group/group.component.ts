@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Module} from '../classes/module';
+import {Controller} from '../commandler-data';
 
 @Component({
   selector: 'cmd-group',
@@ -8,5 +8,5 @@ import {Module} from '../classes/module';
 })
 export class GroupComponent {
   @Input() public group: string;
-  @Input() public modules: Module[];
+  @Input() public controllers: Controller[];
 }

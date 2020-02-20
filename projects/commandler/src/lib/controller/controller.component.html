@@ -1,0 +1,7 @@
+<div *ngIf="controller" id="module-info">
+  <h1 class="name"><a [routerLink]="['/', controller.group]">{{controller.group}}</a> &gt; {{controller.name}}</h1>
+  <p>{{controller.description}}</p>
+  <div class="command" *ngFor="let command of controller.commands">
+    <cmd-command [command]="command"></cmd-command>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Command} from '../classes/command';
+import {Command} from '../commandler-data';
 
 @Component({
   selector: 'cmd-command',

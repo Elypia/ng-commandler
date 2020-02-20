@@ -1,0 +1,684 @@
+{
+  "controllers": [{
+    "group": "Utilities",
+    "name": "Bot",
+    "description": "Generic utilities to check if I\u0027m alive, or get info or bots in the channel.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "bot"
+    }],
+    "commands": [{
+      "name": "ping",
+      "description": "Check if I\u0027m still alive.",
+      "default": false,
+      "static": true,
+      "activators": [{
+        "name": "Aliases",
+        "value": "ping"
+      }],
+      "params": []
+    }, {
+      "name": "Bot Info",
+      "description": "Get information on me and my developers.",
+      "default": true,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "info"
+      }],
+      "params": []
+    }, {
+      "name": "Say",
+      "description": "I\u0027ll repeat what you ask me to say, I\u0027ll also delete your message if I have permission.",
+      "default": false,
+      "static": true,
+      "activators": [{
+        "name": "Aliases",
+        "value": "say"
+      }],
+      "params": [{
+        "name": "body",
+        "description": "The text to repeat.",
+        "list": false,
+        "required": true
+      }]
+    }, {
+      "name": "Bot Invites",
+      "description": "Get the invites for all bots in the guild.",
+      "default": false,
+      "static": true,
+      "activators": [{
+        "name": "Aliases",
+        "value": "invites"
+      }],
+      "params": []
+    }]
+  }, {
+    "group": "Miscellaneous",
+    "name": "Cleverbot",
+    "description": "Chat with Cleverbot through Discord.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "cb"
+    }],
+    "commands": [{
+      "name": "Talk to Cleverbot",
+      "description": "Say something to Cleverbot and get a response.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "say"
+      }],
+      "params": [{
+        "name": "body",
+        "description": "What you want to say.",
+        "list": false,
+        "required": true
+      }]
+    }]
+  }, {
+    "group": "Discord",
+    "name": "Emote",
+    "description": "Information on custom emoticons on Discord.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "emote"
+    }],
+    "commands": [{
+      "name": "Emote List",
+      "description": "Get a full list of all emotes in the guild.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "list"
+      }],
+      "params": [{
+        "name": "guild",
+        "description": "The guild to list emotes for.",
+        "list": false,
+        "required": false
+      }]
+    }, {
+      "name": "Post Emote",
+      "description": "Find and post the specified emote.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "post"
+      }],
+      "params": [{
+        "name": "emote",
+        "description": "The emote I should send.",
+        "list": false,
+        "required": true
+      }]
+    }]
+  }, {
+    "group": "Settings",
+    "name": "Greeting",
+    "description": "Change what happens when a bot or user joins or leaves.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "greeting"
+    }],
+    "commands": [{
+      "name": "Set Greeting",
+      "description": "Set what happens when a certain type of user joins the guild.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "set"
+      }],
+      "params": [{
+        "name": "greeting",
+        "description": "If when the user \"joins\", or \"leaves\".",
+        "list": false,
+        "required": true
+      }, {
+        "name": "account",
+        "description": "If this is for \"users\", or \"bots\".",
+        "list": false,
+        "required": true
+      }, {
+        "name": "message",
+        "description": "What to actually send when this action occurs.",
+        "list": false,
+        "required": true
+      }]
+    }, {
+      "name": "Set Channel",
+      "description": "Set or change the channel that messages are sent to.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "channel"
+      }],
+      "params": [{
+        "name": "channel",
+        "description": "A talkable channel where the message can go.",
+        "list": false,
+        "required": true
+      }]
+    }]
+  }, {
+    "group": "Discord",
+    "name": "Guild",
+    "description": "Information on Discord guilds.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "guild"
+    }],
+    "commands": [{
+      "name": "Guild Info",
+      "description": "Get information on a guild.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "info"
+      }],
+      "params": [{
+        "name": "guild",
+        "description": "The guild to get information on.",
+        "list": false,
+        "required": false
+      }]
+    }, {
+      "name": "Prune Messages",
+      "description": "Delete a bunch of messages in the channel.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "prune"
+      }],
+      "params": [{
+        "name": "amount",
+        "description": "The number of messages to delete.",
+        "list": false,
+        "required": true
+      }, {
+        "name": "channel",
+        "description": "Which channel to delete messages from.",
+        "list": false,
+        "required": false
+      }]
+    }]
+  }, {
+    "group": "Guidance",
+    "name": "Help",
+    "description": "Offer generic help through all the modules in this bot.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "help"
+    }],
+    "commands": [{
+      "name": "Show Groups",
+      "description": "Display a list of all metaCommand categories.",
+      "default": true,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "groups"
+      }],
+      "params": []
+    }, {
+      "name": "Show Modules",
+      "description": "Display a list of all modules in a category.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "modules"
+      }],
+      "params": [{
+        "name": "group",
+        "description": "The group to list modules for.",
+        "list": false,
+        "required": true
+      }]
+    }, {
+      "name": "Show Commands",
+      "description": "Display a list of all metaCommands in a module.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "commands"
+      }],
+      "params": [{
+        "name": "modules",
+        "description": "The module to list commands for.",
+        "list": false,
+        "required": true
+      }]
+    }]
+  }, {
+    "group": "Settings",
+    "name": "Language and Locale",
+    "description": "Change how text is formatted or the language I speak.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "locale"
+    }],
+    "commands": [{
+      "name": "Guild Locale",
+      "description": "Set the default locale for the guild.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "guild"
+      }],
+      "params": [{
+        "name": "locale",
+        "description": "The locale by name, country, or both.",
+        "list": false,
+        "required": true
+      }]
+    }, {
+      "name": "Channel Locale",
+      "description": "Set the locale for this channel, this could be in a guild or private.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "channel"
+      }],
+      "params": [{
+        "name": "locale",
+        "description": "The locale by name, country, or both.",
+        "list": false,
+        "required": true
+      }]
+    }]
+  }, {
+    "group": "Settings",
+    "name": "Level and XP",
+    "description": "Configuring how your members level up.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "lvl"
+    }],
+    "commands": [{
+      "name": "Set Level Up Message",
+      "description": "Set the message that is sent when a user levels up.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "message"
+      }],
+      "params": [{
+        "name": "message",
+        "description": "The message to send when a member levels up.",
+        "list": false,
+        "required": true
+      }]
+    }, {
+      "name": "Test Notification",
+      "description": "Let\u0027s pretend you levelled up and give you a notification!",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "test"
+      }],
+      "params": []
+    }]
+  }, {
+    "group": "Gaming",
+    "name": "osu!",
+    "description": "Integration with osu! the popular rhythm game.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "osu"
+    }],
+    "commands": [{
+      "name": "Get Player",
+      "description": "Display information on an osu! player.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "get"
+      }],
+      "params": [{
+        "name": "players",
+        "description": "The players to get information on.",
+        "list": false,
+        "required": true
+      }, {
+        "name": "mode",
+        "description": "The hame mode to get players on.",
+        "list": false,
+        "required": false
+      }]
+    }]
+  }, {
+    "group": "Settings",
+    "name": "Prefix",
+    "description": "Change or disable the prefix to use my commands!",
+    "activators": [{
+      "name": "Aliases",
+      "value": "prefix"
+    }],
+    "commands": [{
+      "name": "Set Prefix",
+      "description": "Change the prefix if you\u0027re not into the current one.",
+      "default": true,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "set"
+      }],
+      "params": [{
+        "name": "prefix",
+        "description": "The new prefix to use.",
+        "list": false,
+        "required": true
+      }]
+    }, {
+      "name": "Mention Only",
+      "description": "Disable using the guild prefix to interact with the bot.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "mention"
+      }],
+      "params": []
+    }]
+  }, {
+    "group": "Gaming",
+    "name": "RuneScape",
+    "description": "Integration with RuneScape, the popular MMORPG.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "rs"
+    }],
+    "commands": [{
+      "name": "Quests",
+      "description": "Get information on quests a player has completed.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "quests"
+      }],
+      "params": [{
+        "name": "username",
+        "description": "The player to get quests on.",
+        "list": false,
+        "required": true
+      }]
+    }]
+  }, {
+    "group": "Gaming",
+    "name": "Steam",
+    "description": "Integrate with Steam.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "steam"
+    }],
+    "commands": [{
+      "name": "Get Player Steam64 ID",
+      "description": "Return the players Steam64 ID.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "id"
+      }],
+      "params": [{
+        "name": "username",
+        "description": "The player to retrieve the ID of.",
+        "list": false,
+        "required": true
+      }]
+    }, {
+      "name": "Get Player by ID",
+      "description": "Get general profile information on a player by ID.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "getbyid"
+      }],
+      "params": [{
+        "name": "id",
+        "description": "The Steam64 ID of the player.",
+        "list": false,
+        "required": true
+      }]
+    }, {
+      "name": "Get Player",
+      "description": "Get general profile information on a player by vanity URL.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "get"
+      }],
+      "params": [{
+        "name": "username",
+        "description": "The player to get the profile of.",
+        "list": false,
+        "required": true
+      }]
+    }, {
+      "name": "Game Roulette",
+      "description": "Looking to see random games or want me to choose what you play?",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "rand"
+      }],
+      "params": [{
+        "name": "username",
+        "description": "The player to get quests on.",
+        "list": false,
+        "required": true
+      }]
+    }]
+  }, {
+    "group": "Miscellaneous",
+    "name": "Translate",
+    "description": "Utilise Google Translate to translate messages or enable react translations.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "trans"
+    }],
+    "commands": [{
+      "name": "Translate",
+      "description": "I\u0027ll translate whatever you tell me to into the specified language.",
+      "default": true,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "translate"
+      }],
+      "params": [{
+        "name": "body",
+        "description": "The text to translate.",
+        "list": false,
+        "required": true
+      }, {
+        "name": "language",
+        "description": "The language to translate to.",
+        "list": false,
+        "required": true
+      }]
+    }, {
+      "name": "Toggle React Translation",
+      "description": "I\u0027ll translate a message for you on reaction; I\u0027ll have to assume the language though.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "toggle"
+      }],
+      "params": [{
+        "name": "toggle",
+        "description": "If reaction translation should be enabled or disbaled.",
+        "list": false,
+        "required": true
+      }]
+    }]
+  }, {
+    "group": "Media",
+    "name": "Twitch",
+    "description": "View information on streamers and set up notifications.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "twitch"
+    }],
+    "commands": [{
+      "name": "Streamer Info",
+      "description": "Get information on quests a player has completed.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "info"
+      }],
+      "params": [{
+        "name": "username",
+        "description": "The player to get quests on.",
+        "list": false,
+        "required": true
+      }]
+    }]
+  }, {
+    "group": "Miscellaneous",
+    "name": "Urban Dictionary",
+    "description": "Search for the definition of cool words.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "ud"
+    }],
+    "commands": [{
+      "name": "Define",
+      "description": "Define a single word, or a list of words.",
+      "default": true,
+      "static": true,
+      "activators": [{
+        "name": "Aliases",
+        "value": "define"
+      }],
+      "params": [{
+        "name": "words",
+        "description": "The words to define.",
+        "list": true,
+        "required": true
+      }, {
+        "name": "random",
+        "description": "If to get a random definition, or the top one.",
+        "list": false,
+        "required": false
+      }]
+    }]
+  }, {
+    "group": "Discord",
+    "name": "Users",
+    "description": "Interact or get information on users.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "user"
+    }],
+    "commands": [{
+      "name": "User Info",
+      "description": "Display information on a user.",
+      "default": true,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "info"
+      }],
+      "params": [{
+        "name": "username",
+        "description": "The name of the user.",
+        "list": false,
+        "required": false
+      }]
+    }]
+  }, {
+    "group": "Miscellaneous",
+    "name": "Utilities",
+    "description": "Generic utilities that might come in handy in chat.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "utils"
+    }],
+    "commands": [{
+      "name": "Character Count",
+      "description": "See how many characters Discord see\u0027s your message as.",
+      "default": false,
+      "static": true,
+      "activators": [{
+        "name": "Aliases",
+        "value": "count"
+      }],
+      "params": [{
+        "name": "body",
+        "description": "What you want me to count up.",
+        "list": false,
+        "required": true
+      }]
+    }]
+  }, {
+    "group": "Discord",
+    "name": "Voice",
+    "description": "Utilities based around voice channels.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "voice"
+    }],
+    "commands": [{
+      "name": "Mention in Voice Channel",
+      "description": "Mention all users in the specified voice channels.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "mention"
+      }],
+      "params": [{
+        "name": "channels",
+        "description": "The channels to mention users from.",
+        "list": true,
+        "required": true
+      }]
+    }]
+  }, {
+    "group": "Media",
+    "name": "YouTube",
+    "description": "Search YouTube for videos, playlists, and channels.",
+    "activators": [{
+      "name": "Aliases",
+      "value": "yt"
+    }],
+    "commands": [{
+      "name": "Search",
+      "description": "Search YouTube for a video.",
+      "default": false,
+      "static": false,
+      "activators": [{
+        "name": "Aliases",
+        "value": "search"
+      }],
+      "params": [{
+        "name": "query",
+        "description": "The query to search on YouTube.",
+        "list": false,
+        "required": true
+      }]
+    }]
+  }]
+}

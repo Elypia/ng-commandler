@@ -1,11 +1,10 @@
 <div *ngIf="command" class="command">
   <h2 class="name">{{command.name}}</h2>
-  <cmd-aliases [aliases]="command.aliases"></cmd-aliases>
-  <p>{{command.help}}</p>
+  <p>{{command.description}}</p>
   <ng-container *ngIf="command.params && command.params.length > 0">
     <p class="parameters">Parameters: </p>
     <div *ngFor="let param of command.params">
-      <p>{{param.name}}: {{param.help}}</p>
+      <p>{{param.name}}: {{param.description}}</p>
     </div>
   </ng-container>
 </div>

@@ -1,14 +1,13 @@
-<div *ngIf="group">
-  <h1>{{group}}</h1>
-  <div class="module" *ngFor="let module of modules">
-    <a [routerLink]="['/', group, module.name]">
-      <h2 class="name">{{module.name}}</h2>
-      <cmd-aliases [aliases]="module.aliases"></cmd-aliases>
-      <p>{{module.help}}</p>
+<mat-card *ngIf="group">
+  <h2>{{group}}</h2>
+  <div class="module" *ngFor="let controller of controllers">
+    <a [routerLink]="['/', group, controller.name]">
+      <h3 class="name">{{controller.name}}</h3>
+      <p>{{controller.description}}</p>
       <p class="commands">Commands: </p>
-      <div class="command" *ngFor="let command of module.commands">
-          <p>{{command.name}}: {{command.help}}</p>
+      <div class="command" *ngFor="let command of controller.commands">
+          <p>{{command.name}}: {{command.description}}</p>
       </div>
     </a>
   </div>
-</div>
+</mat-card>

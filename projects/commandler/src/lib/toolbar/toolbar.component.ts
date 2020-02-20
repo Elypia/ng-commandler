@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Metadata} from '../classes/metadata';
+import {Metadata} from '../metadata';
 
 @Component({
   selector: 'cmd-toolbar',

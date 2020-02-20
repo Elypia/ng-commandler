@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {GroupComponent} from './group.component';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
-import {CmdAliasesModule} from '../aliases/aliases.module';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,7 @@ import {CmdAliasesModule} from '../aliases/aliases.module';
   imports: [
     RouterModule,
     CommonModule,
-    CmdAliasesModule
+    MatCardModule
   ],
   exports: [
     GroupComponent
