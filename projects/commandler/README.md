@@ -9,19 +9,19 @@ This library depends on [Material Angular] and [Angular Elypian].
 This project is licenced under the Apache 2.0 project, don't be afraid to derive or reference
 from this project all you want!
 
-**All non-code files including videos, models, audio, bitmaps, vectors, and 
-animations such as gifs, are not under the aforementioned license; all rights
-are reserved by Elypia CIC.** 
+**The repository includes our trade name and registered trademarks, 
+which are not granted under the license. Please do not use these 
+except as required to describe the origin of work.**
 
-[discord]: https://discordapp.com/invite/hprGMaM "Discord Invite"
+[discord]: https://discord.com/invite/hprGMaM "Discord Invite"
 [gitlab]: https://gitlab.com/Elypia/ng-commandler/commits/master "Repository on GitLab"
 [npm]: https://www.npmjs.com/package/@elypia/ng-commandler "Package on NPM"
 [elypia-donate]: https://elypia.org/donate "Donate to Elypia"
 [Material Angular]: https://github.com/angular/components "Material Angular on GitHub"
 [Angular Elypian]: https://ng.elypia.org/ "ng-elypian"
 
-[discord-members]: https://discordapp.com/api/guilds/184657525990359041/widget.png "Discord Shield"
+[discord-members]: https://discord.com/api/guilds/184657525990359041/widget.png "Discord Shield"
 [gitlab-build]: https://gitlab.com/Elypia/ng-commandler/badges/master/pipeline.svg "GitLab Build Shield"
 [gitlab-coverage]: https://gitlab.com/Elypia/ng-commandler/badges/master/coverage.svg "GitLab Coverage Shield"
 [npm-downloads]: https://img.shields.io/npm/dt/@elypia/ng-commandler.svg "NPM Downloads"
-[donate-shield]: https://img.shields.io/badge/Elypia-Donate-blueviolet "Donate Shield"
+[donate-shield]: https://img.shields.io/badge/elypia-donate-blueviolet "Donate Shield"
